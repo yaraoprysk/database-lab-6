@@ -13,6 +13,11 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.0</version>
     </parent>
+    <properties>
+                <java.version>11</java.version>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <repositories>
         <repository>
@@ -64,6 +69,35 @@
         <artifactId>springfox-swagger2</artifactId>
         <version>2.9.2</version>
     </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+         <groupId>io.micrometer</groupId>
+         <artifactId>micrometer-registry-prometheus</artifactId>
+         <version>${micrometer.version}</version>
+    </dependency>
+    </dependencies>
+    <build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-compiler-plugin</artifactId>
+                                <version>3.8.0</version>
+                                <configuration>
+                                        <release>11</release>
+                                </configuration>
+                        </plugin>
+                        <plugin>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-maven-plugin</artifactId>
+                                <configuration>
+                                        <skip>true</skip>
+                                </configuration>
+                        </plugin>
+                </plugins>
+    </build>
 
 
     </dependencies>
