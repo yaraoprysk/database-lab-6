@@ -98,9 +98,4 @@
                         </plugin>
                 </plugins>
     </build>
-
-
-    </dependencies>
-
-
 </project>
